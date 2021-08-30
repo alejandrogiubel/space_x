@@ -71,13 +71,15 @@ class SpaceXApiGraphqlImplement extends ISpaceXApi {
     );
 
     QueryResult queryResult = await client.query(queryOptions);
-    List list = queryResult.data!['rockets'];
-
-    list.forEach((element) {
-      rockets.add(
-        Rocket.fromJson(element)
-      );
-    });
+    if (queryResult.data != null) {
+      List list = queryResult.data!['rockets'];
+      
+      list.forEach((element) {
+        rockets.add(
+          Rocket.fromJson(element)
+        );
+      });
+    }
 
     return rockets;
   }
@@ -120,13 +122,15 @@ class SpaceXApiGraphqlImplement extends ISpaceXApi {
     );
     
     QueryResult queryResult = await client.query(queryOptions);
-    List list = queryResult.data!['launchesPast'];
-
-    list.forEach((element) {
-      pastLaunches.add(
-        PastLaunch.fromJson(element)
-      );
-    });
+    if (queryResult.data != null) {
+      List list = queryResult.data!['launchesPast'];
+      
+      list.forEach((element) {
+        pastLaunches.add(
+          PastLaunch.fromJson(element)
+        );
+      });
+    }
 
     return pastLaunches;
   }

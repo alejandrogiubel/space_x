@@ -1,6 +1,5 @@
 import 'dart:ui';
 
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
@@ -54,43 +53,42 @@ class HomePage extends GetView<HomeController> {
 
   _rocketsDetails(int index) {
     Rocket rocket = controller.rockets[index];
-    return Padding(
-      padding: const EdgeInsets.only(left: 30, right: 30, top: 70),
-      child: PageView(
-        scrollDirection: Axis.vertical,
-        children: <Widget>[
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Padding(
-              padding: const EdgeInsets.only(bottom: 50),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(10),
-                child: Container(
-                  color: Colors.black45,
-                  child: BackdropFilter(
-                    filter: ImageFilter.blur(sigmaY: 30, sigmaX: 30, tileMode: TileMode.mirror),
-                    child: Padding(
-                      padding: const EdgeInsets.all(15.0),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            rocket.name,
-                            style: titleTextStyle,
-                          ),
-                          Text(rocket.description,
-                            style: subtitleTextStyle,
-                          ),
-                        ],
-                      ),
+    return PageView(
+      scrollDirection: Axis.vertical,
+      children: <Widget>[
+        Align(
+          alignment: Alignment.bottomCenter,
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 50),
+            child: ClipRect(
+              child: Container(
+                color: Colors.black26,
+                child: BackdropFilter(
+                  filter: ImageFilter.blur(sigmaY: 5, sigmaX: 5, tileMode: TileMode.mirror),
+                  child: Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          rocket.name,
+                          style: titleTextStyle,
+                        ),
+                        Text(rocket.description,
+                          style: subtitleTextStyle,
+                        ),
+                      ],
                     ),
                   ),
                 ),
               ),
             ),
           ),
-          SafeArea(
+        ),
+        SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 70, left: 30, right: 30),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -155,19 +153,11 @@ class HomePage extends GetView<HomeController> {
                 Text(rocket.engines.propellant2,
                   style: subtitleTextStyle,
                 ),
-                SizedBox(height: 10,),
-                Text('Engines version',
-                  style: titleTextStyle,
-                ),
-                Text(rocket.engines.version,
-                  style: subtitleTextStyle,
-                ),
-                SizedBox(height: 10,),
               ],
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 

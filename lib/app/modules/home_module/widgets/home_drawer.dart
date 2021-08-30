@@ -60,6 +60,12 @@ class HomeDrawer extends StatelessWidget {
                         style: drawerTextStyle,
                       ),
                     ),
+                    ListTile(
+                      title: Text('3D models',
+                        style: drawerTextStyle,
+                      ),
+                      onTap: () => Get.toNamed(Routes.MODELS3D),
+                    ),
                   ],
                 ),
               ),

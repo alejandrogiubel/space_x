@@ -9,12 +9,12 @@ final TextStyle cardTextStyle = TextStyle(
 
 TextStyle subtitleTextStyle = TextStyle(
   color: Colors.white,
-  fontSize: 20,
+  fontSize: 15,
 );
 
 TextStyle titleTextStyle = TextStyle(
   color: Colors.white,
-  fontSize: 30,
+  fontSize: 25,
   fontWeight: FontWeight.bold,
 );
 
