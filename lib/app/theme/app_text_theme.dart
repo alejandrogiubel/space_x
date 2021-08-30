@@ -41,3 +41,8 @@ TextStyle pastLaunchesTitleTextStyle = TextStyle(
   fontSize: 18,
   fontWeight: FontWeight.w500
 );
+
+TextStyle aboutTextStyle = TextStyle(
+    color: Colors.white,
+    fontSize: 15,
+);

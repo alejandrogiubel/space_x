@@ -6,7 +6,7 @@ import 'package:space_x/app/domain/uses_case/use_case_get_rockets.dart';
 
 class HomeController extends GetxController{
   String title = 'Space X';
-  UseCaseGetRocket getRockets = GetRockets();
+  UseCaseGetRockets getRockets = GetRockets();
   List<Rocket> rockets = [];
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
   bool showSwipeUpIndicator = false;

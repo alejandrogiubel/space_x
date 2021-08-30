@@ -12,7 +12,7 @@ void main() {
     debugShowCheckedModeBanner: false,   
     initialRoute: '/',   
     theme: appThemeData,   
-    defaultTransition: Transition.fade,   
+    defaultTransition: Transition.native,
     getPages: AppPages.pages,
     home: HomePage(),
     initialBinding: HomeBinding(),
